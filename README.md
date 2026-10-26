@@ -1,6 +1,11 @@
 # Artificial-Life-Book
 
+[![Book checks and Pages](https://github.com/KorieLochten/Artificial-Life-Book/actions/workflows/pages.yml/badge.svg)](https://github.com/KorieLochten/Artificial-Life-Book/actions/workflows/pages.yml)
+[![Video render candidates](https://github.com/KorieLochten/Artificial-Life-Book/actions/workflows/videos.yml/badge.svg)](https://github.com/KorieLochten/Artificial-Life-Book/actions/workflows/videos.yml)
+
 An interactive book about artificial life. The first p5.js version covers the existing Conway's Game of Life chapters and pattern gallery; the elementary cellular automata chapters remain drafts.
+
+Read the [published book](https://korielochten.github.io/Artificial-Life-Book/).
 
 ## Work locally
 
@@ -91,11 +96,12 @@ Review the video and final frame, then copy an approved export into `book/src/me
 
 [Video render candidates](.github/workflows/videos.yml) runs when animation source, the video runner, or its workflow changes, and can also be requested manually. It renders the default preview and uploads candidate MP4/PNG artifacts for review. This job is independent of the book build and does not publish chapter media.
 
-The workflows are prepared for activation after review and merge to `main`. To enable the Pages rollout:
+This repository publishes through GitHub Actions. The previous `gh-pages` branch is retained as rollback history. When setting up publishing again, or in a fork:
 
-1. Merge the workflow and tooling changes to `main`.
-2. In the repository's **Settings > Pages**, select **GitHub Actions** as the publishing source. Retain the existing `gh-pages` branch as rollback history.
-3. Run the Pages workflow and verify the published site.
+1. Put the workflow and tooling changes on `main` and confirm the book checks pass.
+2. In **Settings > Environments > github-pages**, allow deployments from `main`. A site migrated from branch publishing may still allow only `gh-pages`.
+3. In **Settings > Pages**, select **GitHub Actions** as the publishing source.
+4. Run the Pages workflow and verify the published site.
 
 After activation, an authenticated GitHub CLI can request a fresh checked deployment of `main`:
 
