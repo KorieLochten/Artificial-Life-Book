@@ -8,10 +8,10 @@
 
 Conway's Game of Life is a very simple but rewarding project, understanding it and doing it on your own is such a great feeling. I will be walking you through it with the basic logic while creating programming building blocks along the way.
 
-We're evolving from a one-dimensional CA to now a two-dimensional CA adding complexity as we will have a larger neighborhood of <b>9</b>, contrast to the simple neighborhood of <b>3</b>  in Elementary Cellular Automata.
+We're evolving from a one-dimensional CA to now a two-dimensional CA adding complexity as we will have a larger neighborhood of <b>9</b>, contrast to the simple neighborhood of <b>3</b> in Elementary Cellular Automata. That nine-cell area includes the center cell; the rules count its <b>8 surrounding neighbors</b>.
 
 <video controls>
-<source src="Neighborhood.mp4" type="video/mp4">
+<source src="media/game-of-life/Neighborhood.mp4" type="video/mp4">
 </video>
 
 </div>
@@ -43,22 +43,18 @@ neighbors.
 <br>
 
 <video style="background: solid 1px white" controls>
-<source src="RuleExplanation.mp4" type="video/mp4">
+<source src="media/game-of-life/RuleExplanation.mp4" type="video/mp4">
 </video>
 
 </div>
 
 ---
 
-<script src="ConwaysGameOfLife.js">
+<iframe class="life-example" id="life-introduction" title="Conway's Game of Life introduction" src="sketches/game-of-life/index.html?example=introduction"></iframe>
 
-</script>
-
-<script>
-    let grid = new Grid({ width : Math.floor(window.innerWidth / 20), height : Math.floor(window.innerHeight / 20),  useAlpha : true , spread : true})
-
-    grid.startAnimating();
-</script>
+<div class="container">
+Try the rules yourself! Use <b>Pause</b> and <b>Step</b> to see one generation at a time. <b>Play</b> lets it run; <b>Reset</b> returns to the starting pattern.
+</div>
 
 <div class="container">
 

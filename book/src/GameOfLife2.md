@@ -1,10 +1,7 @@
 <br>
 <h1 style = "text-align: center;">Patterns</h1>
 
-
 ---
-
-<script src="ConwaysGameOfLife.js"></script>
 
 <div class="primary-header">
 <span style="font-size : 30px;"><b>Game of Life</b></span>
@@ -12,8 +9,23 @@
 <span style="color:grey">The Main</span>
 </div>
 
-<div class ="container">
-    <div class="explanation" id="gof" style="text-align:center"></div>
+<div class="container">
+Use <b>Pause</b> and <b>Step</b> to follow one generation at a time, or let the examples run. You can draw cells and use <b>Reset</b> to return to the starting pattern. The examples have separate grids, so feel free to try things out!
+
+<iframe class="life-example" id="gof" title="Game of Life" src="sketches/game-of-life/index.html?example=main"></iframe>
+
+All of these examples use the same Game of Life sketch. Each frame runs its own <code>setup()</code> and <code>draw()</code>, so it has its own grid. Here are the p5.js functions that run the examples:
+
+```javascript
+{{#include sketches/game-of-life/sketch.js:sketch-setup}}
+```
+
+```javascript
+{{#include sketches/game-of-life/sketch.js:animation}}
+```
+
+The <a href="sketches/game-of-life/patterns.js">pattern definitions</a> list their starting cells as <b>[column, row]</b> coordinates. Try changing a pattern's coordinates to make your own shape!
+
 </div>
 
 <div class="primary-header">
@@ -22,15 +34,12 @@
 <span style="color:grey">Boring Dudes</span>
 </div>
 
-<div class ="container">
-
-<div class="explanation" id="block" style="text-align:center"></div>
-<div class="explanation" id="beehive" style="text-align:center"></div>
-<div class="explanation" id="loaf" style="text-align:center"></div>
-<div class="explanation" id="boat" style="text-align:center"></div>
-<div class="explanation" id="tub" style="text-align:center"></div>
-
-
+<div class="container">
+<iframe class="life-example" id="block" title="Block pattern" src="sketches/game-of-life/index.html?example=block" loading="lazy"></iframe>
+<iframe class="life-example" id="beehive" title="Beehive pattern" src="sketches/game-of-life/index.html?example=beehive" loading="lazy"></iframe>
+<iframe class="life-example" id="loaf" title="Loaf pattern" src="sketches/game-of-life/index.html?example=loaf" loading="lazy"></iframe>
+<iframe class="life-example" id="boat" title="Boat pattern" src="sketches/game-of-life/index.html?example=boat" loading="lazy"></iframe>
+<iframe class="life-example" id="tub" title="Tub pattern" src="sketches/game-of-life/index.html?example=tub" loading="lazy"></iframe>
 </div>
 
 ---
@@ -41,15 +50,13 @@
 <span style="color:grey">Amazing</span>
 </div>
 
-<div class ="container">
-
-<div class="explanation" id="toad" style="text-align:center"></div>
-<div class="explanation" id="beacon" style="text-align:center"></div>
-<div class="explanation" id="pulsar" style="text-align:center"></div>
-<div class="explanation" id="pentadecathlon" style="text-align:center"></div>
-<div class="explanation" id="glidergun" style="text-align:center"></div>
-<div class="explanation" id="blinker" style="text-align:center"></div>
-
+<div class="container">
+<iframe class="life-example" id="toad" title="Toad pattern" src="sketches/game-of-life/index.html?example=toad" loading="lazy"></iframe>
+<iframe class="life-example" id="beacon" title="Beacon pattern" src="sketches/game-of-life/index.html?example=beacon" loading="lazy"></iframe>
+<iframe class="life-example" id="pulsar" title="Pulsar pattern" src="sketches/game-of-life/index.html?example=pulsar" loading="lazy"></iframe>
+<iframe class="life-example" id="pentadecathlon" title="Pentadecathlon pattern" src="sketches/game-of-life/index.html?example=pentadecathlon" loading="lazy"></iframe>
+<iframe class="life-example" id="glidergun" title="Glider gun pattern" src="sketches/game-of-life/index.html?example=glidergun" loading="lazy"></iframe>
+<iframe class="life-example" id="blinker" title="Blinker pattern" src="sketches/game-of-life/index.html?example=blinker" loading="lazy"></iframe>
 </div>
 
 ---
@@ -60,83 +67,11 @@
 <span style="color:grey">Beautiful</span>
 </div>
 
-<div class ="container">
-
-<div class="explanation" style="text-align:center"><div id="glider"></div></div>
-<div class="explanation" style="text-align:center"><div id="lightweightspaceship"></div></div>
-<div class="explanation" style="text-align:center"><div id="middleweightspaceship"></div></div>
-<div class="explanation" style="text-align:center"><div id="heavyweightspaceship"></div></div>
-
+<div class="container">
+<div class="explanation" style="text-align:center"><iframe class="life-example" id="glider" title="Glider pattern" src="sketches/game-of-life/index.html?example=glider" loading="lazy"></iframe></div>
+<div class="explanation" style="text-align:center"><iframe class="life-example" id="lightweightspaceship" title="Lightweight spaceship pattern" src="sketches/game-of-life/index.html?example=lightweightspaceship" loading="lazy"></iframe></div>
+<div class="explanation" style="text-align:center"><iframe class="life-example" id="middleweightspaceship" title="Middleweight spaceship pattern" src="sketches/game-of-life/index.html?example=middleweightspaceship" loading="lazy"></iframe></div>
+<div class="explanation" style="text-align:center"><iframe class="life-example" id="heavyweightspaceship" title="Heavyweight spaceship pattern" src="sketches/game-of-life/index.html?example=heavyweightspaceship" loading="lazy"></iframe></div>
 </div>
-
-
-<script>
-
-    let isMobile = /mobile/i.test(navigator.userAgent);
-    let templates = [
-    ["blinker", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true}], 
-    ["block", {
-         infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], 
-    ["loaf", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], 
-    ["boat",  {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }
-    ], 
-    ["beehive", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], 
-    ["tub", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], [
-    "pulsar", {
-        infinite : true, cellSize : isMobile ? 5 : 10, repeatAfter : 15, useBorders : true
-    }
-    ], 
-    ["glidergun", {
-        infinite : true, cellSize : isMobile ? 5 : 10, repeatAfter : 40, useBorders : true
-    }], 
-    ["beacon", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], 
-    ["toad", {
-        infinite : true, cellSize : isMobile ? 10: 20, repeatAfter : 15, useBorders : true
-    }], 
-    ["pentadecathlon", {
-        infinite : true, cellSize : isMobile ? 5 : 10, repeatAfter : 25, useBorders : true
-    }], 
-    ["glider", {
-        infinite : true, cellSize : isMobile ? 7.5 : 15, repeatAfter : 50, useBorders : true
-    }], 
-    [
-    "lightweightspaceship", {
-        infinite : true, cellSize : isMobile ? 7.5 : 15, repeatAfter : 50, useBorders : true
-    }
-    ], 
-    [
-    "middleweightspaceship", {
-        infinite : true, cellSize : isMobile ? 7.5 : 15, repeatAfter : 50, useBorders : true
-    }
-    ], 
-    ["heavyweightspaceship", {
-        infinite : true, cellSize : isMobile ? 7.5 : 15, repeatAfter : 50, useBorders : true
-    }
-    ]]
-
-    for(const template of templates){
-        let grid = Grid.to(template[0], {...{label : template[0], relativeObject : template[0]}, ...template[1]})
-        grid.startAnimating();
-    }
-
-    let grid = new Grid({
-    width : 50, height : 50,
-    infinite : true, cellSize : isMobile ? 5 : 10, repeatAfter : 150, useBorders : true, 
-    relativeObject : "gof", label : "Game Of Life", interactive : true, random : true, useColor : true, useAlpha : true})
-    grid.startAnimating()
-
-</script>
 
 <footer id="footer"></footer>

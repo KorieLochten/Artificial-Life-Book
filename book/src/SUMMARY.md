@@ -4,5 +4,4 @@
     - [Patterns](./ElementaryCellularAutomata2.md)
 - [Conway's Game of Life](./GameOfLife0.md)
     - [Basic Grid Logic](./GameOfLife1.md)
-    - [More Grid Logic](./GameOfLife2.md)
     - [Patterns](./GameOfLife2.md)

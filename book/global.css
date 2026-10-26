@@ -61,3 +61,11 @@
     width : 100%;
     height : 100%
 }
+
+.life-example {
+    display: block;
+    width: 100%;
+    height: 24rem;
+    margin: 1.2rem 0;
+    border: 0;
+}
